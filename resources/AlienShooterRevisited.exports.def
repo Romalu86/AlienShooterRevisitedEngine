@@ -1,0 +1,5 @@
+EXPORTS
+    ?SFINIT0_MonsterVidAllocate@@YAXXZ @1
+    ?SFINIT1_Proc@@YAXXZ @2
+    ?SFINIT2_Proc@@YAXXZ @3
+    ?SFLB_GetHeroId@@YAHH@Z @4

@@ -1,0 +1,10 @@
+LIBRARY d3dx9_27.dll
+EXPORTS
+    D3DXCreateTextureFromFileExA@56 = D3DXCreateTextureFromFileExA
+    D3DXGetImageInfoFromFileA@8 = D3DXGetImageInfoFromFileA
+    D3DXCreateEffectFromFileA@32 = D3DXCreateEffectFromFileA
+    D3DXCreateEffectFromResourceA@36 = D3DXCreateEffectFromResourceA
+    D3DXCreateFontA@48 = D3DXCreateFontA
+    D3DXLoadSurfaceFromSurface@32 = D3DXLoadSurfaceFromSurface
+    D3DXSaveSurfaceToFileA@20 = D3DXSaveSurfaceToFileA
+    D3DXCreateSphere@24 = D3DXCreateSphere

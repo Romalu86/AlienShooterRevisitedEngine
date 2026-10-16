@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32"><Configuration>Debug</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32"><Configuration>Release</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{7D3A31A2-5E26-4A99-B2C0-A52B88D34F01}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>AlienShooterRevisited</RootNamespace>
+    <ProjectName>AlienShooterRevisited</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <UseOfMfc>false</UseOfMfc><UseOfAtl>false</UseOfAtl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <UseOfMfc>false</UseOfMfc><UseOfAtl>false</UseOfAtl>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets"><Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" /></ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir>$(ProjectDir)..\build\vs2022\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\build\vs2022\obj\$(Configuration)\</IntDir>
+    <TLogLocation>$(IntDir)</TLogLocation>
+    <TargetName>AlienShooter</TargetName><TargetExt>.exe</TargetExt>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\src;$(ProjectDir)..\third_party;$(ProjectDir)..\third_party\libogg\include;$(ProjectDir)..\third_party\libvorbis\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;WIN32_LEAN_AND_MEAN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem><TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>$(ProjectDir)..\resources\AlienShooterRevisited_GameResources.res;legacy_stdio_definitions.lib;$(ProjectDir)..\resources\d3dx9_27_import.lib;kernel32.lib;user32.lib;gdi32.lib;advapi32.lib;winmm.lib;comdlg32.lib;ole32.lib;shell32.lib;d3d9.lib;dinput8.lib;dsound.lib;dxguid.lib;strmiids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)AlienShooter.map</MapFileName>
+      <BaseAddress>0x00400000</BaseAddress>
+      <StackReserveSize>1048576</StackReserveSize>
+      <StackCommitSize>4096</StackCommitSize>
+      <HeapReserveSize>1048576</HeapReserveSize>
+      <HeapCommitSize>4096</HeapCommitSize>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>false</DataExecutionPrevention>
+      <OptimizeReferences>false</OptimizeReferences>
+      <EnableCOMDATFolding>false</EnableCOMDATFolding>
+      <ModuleDefinitionFile>$(ProjectDir)..\resources\AlienShooterRevisited.exports.def</ModuleDefinitionFile>
+      <AdditionalOptions>/FIXED /FILEALIGN:512 /SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\src;$(ProjectDir)..\third_party;$(ProjectDir)..\third_party\libogg\include;$(ProjectDir)..\third_party\libvorbis\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;WIN32_LEAN_AND_MEAN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem><TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>$(ProjectDir)..\resources\AlienShooterRevisited_GameResources.res;legacy_stdio_definitions.lib;$(ProjectDir)..\resources\d3dx9_27_import.lib;kernel32.lib;user32.lib;gdi32.lib;advapi32.lib;winmm.lib;comdlg32.lib;ole32.lib;shell32.lib;d3d9.lib;dinput8.lib;dsound.lib;dxguid.lib;strmiids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)AlienShooter.map</MapFileName>
+      <BaseAddress>0x00400000</BaseAddress>
+      <StackReserveSize>1048576</StackReserveSize>
+      <StackCommitSize>4096</StackCommitSize>
+      <HeapReserveSize>1048576</HeapReserveSize>
+      <HeapCommitSize>4096</HeapCommitSize>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>false</DataExecutionPrevention>
+      <OptimizeReferences>false</OptimizeReferences>
+      <EnableCOMDATFolding>false</EnableCOMDATFolding>
+      <ModuleDefinitionFile>$(ProjectDir)..\resources\AlienShooterRevisited.exports.def</ModuleDefinitionFile>
+      <AdditionalOptions>/FIXED /FILEALIGN:512 /SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+      <ItemGroup>
+    <ClCompile Include="..\third_party\libogg\src\bitwise.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\third_party\libogg\src\framing.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\third_party\libvorbis\lib\block.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\third_party\libvorbis\lib\codebook.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\third_party\libvorbis\lib\floor0.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\third_party\libvorbis\lib\floor1.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\third_party\libvorbis\lib\info.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\third_party\libvorbis\lib\mapping0.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\third_party\libvorbis\lib\mdct.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\third_party\libvorbis\lib\psy.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\third_party\libvorbis\lib\res0.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\third_party\libvorbis\lib\xiph_registry.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\third_party\libvorbis\lib\smallft.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\third_party\libvorbis\lib\synthesis.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\third_party\libvorbis\lib\vorbisfile.c">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\src\BALLOON.CPP">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\BUILDING.CPP">
+      <AdditionalOptions>/source-charset:utf-8 /execution-charset:.1251 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\src\CANNON.CPP">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\CONSTANT.CPP" />
+    <ClCompile Include="..\src\CREATURE.CPP" />
+    <ClCompile Include="..\src\DEPO.CPP" />
+    <ClCompile Include="..\src\dialog.cpp" />
+    <ClCompile Include="..\src\dialog_unit.cpp" />
+    <ClCompile Include="..\src\dialogSrv.cpp" />
+    <ClCompile Include="..\src\ENGINE.CPP">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\FRAME.CPP">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\graph.cpp">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</BufferSecurityCheck>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Precise</FloatingPointModel>
+    </ClCompile>
+    <ClCompile Include="..\src\GROUPS.CPP" />
+    <ClCompile Include="..\src\INPUT.CPP">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\system_font.cpp" />
+    <ClCompile Include="..\src\main_sw.cpp">
+      <ExceptionHandling>Async</ExceptionHandling>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\man.cpp">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\MAP.CPP">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\map_steam.cpp" />
+    <ClCompile Include="..\src\MENU.CPP" />
+    <ClCompile Include="..\src\MESSAGE.CPP">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\MOUSE.CPP" />
+    <ClCompile Include="..\src\mousetips.cpp" />
+    <ClCompile Include="..\src\MYERROR.CPP" />
+    <ClCompile Include="..\src\MYLIB.CPP">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\NET.CPP" />
+    <ClCompile Include="..\src\PLANE.CPP" />
+    <ClCompile Include="..\src\PLAYER.CPP">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\player_arcade.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\RAIL.CPP">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\RAILWAY.CPP">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\REGION.CPP" />
+    <ClCompile Include="..\src\RESREAD.CPP" />
+    <ClCompile Include="..\src\ROBOT.CPP" />
+    <ClCompile Include="..\src\SCRIPT.CPP" />
+    <ClCompile Include="..\src\script_exec.cpp">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\SFX.CPP">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\SOUND.CPP">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\SPRITE.CPP">
+      <AdditionalOptions>/source-charset:utf-8 /execution-charset:.1251 %(AdditionalOptions)</AdditionalOptions>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\sprite_collector.cpp">
+      <AdditionalOptions>/source-charset:utf-8 /execution-charset:.1251 %(AdditionalOptions)</AdditionalOptions>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\sprite_list.cpp">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\surface.cpp" />
+    <ClCompile Include="..\src\TERRAIN.CPP" />
+    <ClCompile Include="..\src\texture.cpp" />
+    <ClCompile Include="..\src\UNIT.CPP">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\VID.CPP">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Eng\zOptSave.cpp" />
+    <ClCompile Include="..\src\zm\Eng\zProfLdr\zProfLdr.cpp" />
+    <ClCompile Include="..\src\zm\Eng\zProfLdr\zProfMngr.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Game\Campaign\zCampaign.cpp" />
+    <ClCompile Include="..\src\zm\Game\RecordDB\zRecordDB.cpp" />
+    <ClCompile Include="..\src\zm\Game\ScriptExec\zScriptExec.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Game\Vehicles\zCarControl.cpp">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Game\zGroundItem.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Game\zItemTaker.cpp">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Game\zVidCopier.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\IniParser\zIniParser.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\IniParser\zItemInfo.cpp" />
+    <ClCompile Include="..\src\zm\Input\zInputMap.cpp" />
+    <ClCompile Include="..\src\zm\Inventory\zInventory.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Inventory\zInventory2D.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Inventory\zInventory3D.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Inventory\zInventoryItem.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Inventory\zInvServer.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Menu\zBaseDlgMenu.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Menu\zBriefingDlgMenu.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Menu\zHeroInvMenu.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Menu\zParamDlgMenu.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Menu\zShopDlgMenu.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Menu\zShopItemInfo.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Menu\zSpriteInventory.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Quest\zQuestServer.cpp" />
+    <ClCompile Include="..\src\zm\RPGHero\zRPGAmmo.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGArmor.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGBaseObject.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGBaseObject_loadsave.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGEquip.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGFrameWork.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGHero.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGHero_loadsave.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGHeroBase.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGHeroBase_loadsave.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGImplant.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGImplant_loadsave.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGParamDialog.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGQuest.cpp" />
+    <ClCompile Include="..\src\zm\RPGHero\zRPGQuest_loadsave.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGWeapon.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\RPGHero\zRPGWeapon_loadsave.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Survive\zSurvive.cpp" />
+    <ClCompile Include="..\src\zm\Utils\String\zString.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Utils\zLogConsole.cpp">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Utils\zRefObject.cpp">
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+    </ClCompile>
+    <ClCompile Include="..\src\zm\Utils\zUtils.cpp" />
+    <ClCompile Include="..\src\zm\zDebug.cpp" />
+  </ItemGroup>
+      <ItemGroup>
+    <ClInclude Include="..\src\basetype.h" />
+    <ClInclude Include="..\src\zm\Utils\zStaticStorage.h" />
+    <ClInclude Include="..\src\zm\Utils\zVectorOperations.h" />
+    <ClInclude Include="..\src\engine_globals.h" />
+    <ClInclude Include="..\src\runtime\win32_callbacks.h" />
+    <ClInclude Include="..\src\constant.h" />
+<ClInclude Include="..\src\dialogSrv.h" />
+    <ClInclude Include="..\src\engine.h" />
+<ClInclude Include="..\src\frame.h" />
+    <ClInclude Include="..\src\system_font.h" />
+    <ClInclude Include="..\src\graph.h" />
+<ClInclude Include="..\src\groups.h" />
+    <ClInclude Include="..\src\input.h" />
+<ClInclude Include="..\src\map.h" />
+    <ClInclude Include="..\src\menu.h" />
+    <ClInclude Include="..\src\message.h" />
+    <ClInclude Include="..\src\man.h" />
+    <ClInclude Include="..\src\iman.h" />
+    <ClInclude Include="..\src\irpg.h" />
+    <ClInclude Include="..\src\mouse.h" />
+    <ClInclude Include="..\src\mousetips.h" />
+    <ClInclude Include="..\src\mylib.h" />
+    <ClInclude Include="..\src\net.h" />
+    <ClInclude Include="..\src\legacy_d3dx_effect.h" />
+    <ClInclude Include="..\src\player.h" />
+    <ClInclude Include="..\src\player_arcade.h" />
+    <ClInclude Include="..\src\creature.h" />
+    <ClInclude Include="..\src\depo.h" />
+    <ClInclude Include="..\src\robot.h" />
+<ClInclude Include="..\src\rail.h" />
+<ClInclude Include="..\src\railway.h" />
+    <ClInclude Include="..\src\region.h" />
+    <ClInclude Include="..\src\resread.h" />
+    <ClInclude Include="..\src\script.h" />
+    <ClInclude Include="..\src\sfx.h" />
+    <ClInclude Include="..\src\sound.h" />
+    <ClInclude Include="..\src\sprite.h" />
+    <ClInclude Include="..\src\sprite_collector.h" />
+    <ClInclude Include="..\src\surface.h" />
+    <ClInclude Include="..\src\legacy_d3dx_mesh.h" />
+<ClInclude Include="..\src\unit.h" />
+    <ClInclude Include="..\src\vid.h" />
+    <ClInclude Include="..\src\texture.h" />
+<ClInclude Include="..\src\zm\Eng\zOptSave.h" />
+<ClInclude Include="..\src\zm\Eng\zProfLdr\zProfLdr.h" />
+    <ClInclude Include="..\src\zm\Game\Campaign\zCampaign.h" />
+    <ClInclude Include="..\src\zm\Game\ScriptExec\zScriptExec.h" />
+    <ClInclude Include="..\src\zm\Game\zItemTaker.h" />
+    <ClInclude Include="..\src\zm\IniParser\zIniParser.h" />
+    <ClInclude Include="..\src\zm\Inventory\zInventory.h" />
+    <ClInclude Include="..\src\zm\Inventory\zInventory2D.h" />
+    <ClInclude Include="..\src\zm\Inventory\zInventoryItem.h" />
+    <ClInclude Include="..\src\zm\Inventory\zInvServer.h" />
+    <ClInclude Include="..\src\zm\Menu\zBaseDlgMenu.h" />
+    <ClInclude Include="..\src\zm\Menu\zHeroInvMenu.h" />
+    <ClInclude Include="..\src\zm\Menu\zShopDlgMenu.h" />
+    <ClInclude Include="..\src\zm\Menu\zShopItemInfo.h" />
+    <ClInclude Include="..\src\zm\Menu\zSpriteInventory.h" />
+    <ClInclude Include="..\src\zm\Quest\zQuestServer.h" />
+    <ClInclude Include="..\src\zm\RPGHero\iRPGBaseObjectConst.h" />
+    <ClInclude Include="..\src\zm\RPGHero\zQuestVector.h" />
+    <ClInclude Include="..\src\zm\RPGHero\zRPGAmmo.h" />
+    <ClInclude Include="..\src\zm\RPGHero\zRPGArmor.h" />
+    <ClInclude Include="..\src\zm\RPGHero\zRPGBaseObject.h" />
+    <ClInclude Include="..\src\zm\RPGHero\zRPGEquip.h" />
+    <ClInclude Include="..\src\zm\RPGHero\zRPGFrameWork.h" />
+    <ClInclude Include="..\src\zm\RPGHero\zRPGHero.h" />
+    <ClInclude Include="..\src\zm\RPGHero\zRPGHeroBase.h" />
+    <ClInclude Include="..\src\zm\RPGHero\zRPGImplant.h" />
+    <ClInclude Include="..\src\zm\RPGHero\zRPGParamDialog.h" />
+    <ClInclude Include="..\src\zm\RPGHero\zRPGQuest.h" />
+    <ClInclude Include="..\src\zm\RPGHero\zRPGWeapon.h" />
+    <ClInclude Include="..\src\zm\Survive\zSurvive.h" />
+<ClInclude Include="..\src\zm\Utils\String\zString.h" />
+    <ClInclude Include="..\src\zm\Utils\zContainerProxy.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\balloon.h" />
+    <ClInclude Include="..\src\base_graph.h" />
+    <ClInclude Include="..\src\building.h" />
+    <ClInclude Include="..\src\cannon.h" />
+    <ClInclude Include="..\src\dialog_unit.h" />
+    <ClInclude Include="..\src\exports.h" />
+    <ClInclude Include="..\src\legacy_d3dx_font.h" />
+    <ClInclude Include="..\src\list.h" />
+    <ClInclude Include="..\src\myerror.h" />
+    <ClInclude Include="..\src\plane.h" />
+    <ClInclude Include="..\src\script_exec.h" />
+    <ClInclude Include="..\src\script_exec_dispatch.h" />
+    <ClInclude Include="..\src\sprite_list.h" />
+    <ClInclude Include="..\src\stream.h" />
+    <ClInclude Include="..\src\terrain.h" />
+    <ClInclude Include="..\src\weapon_runtime.h" />
+    <ClInclude Include="..\src\zm\Eng\zProfLdr\zProfMngr.h" />
+    <ClInclude Include="..\src\zm\Game\RecordDB\zRecordDB.h" />
+    <ClInclude Include="..\src\zm\Game\ScriptExec\ScriptExecExternalCommand.h" />
+    <ClInclude Include="..\src\zm\Game\Vehicles\zCarControl.h" />
+    <ClInclude Include="..\src\zm\Game\zGroundItem.h" />
+    <ClInclude Include="..\src\zm\Game\zVidCopier.h" />
+    <ClInclude Include="..\src\zm\IniParser\zItemInfo.h" />
+    <ClInclude Include="..\src\zm\Input\zInputMap.h" />
+    <ClInclude Include="..\src\zm\Inventory\zInventory3D.h" />
+    <ClInclude Include="..\src\zm\Menu\zBriefingDlgMenu.h" />
+    <ClInclude Include="..\src\zm\Menu\zParamDlgMenu.h" />
+    <ClInclude Include="..\src\zm\Utils\zLogConsole.h" />
+    <ClInclude Include="..\src\zm\Utils\zRefObject.h" />
+    <ClInclude Include="..\third_party\libogg\include\ogg\ogg.h" />
+    <ClInclude Include="..\third_party\libvorbis\include\vorbis\codec.h" />
+    <ClInclude Include="..\third_party\libvorbis\include\vorbis\vorbisfile.h" />
+    <ClInclude Include="..\third_party\libvorbis\lib\backends.h" />
+    <ClInclude Include="..\third_party\libvorbis\lib\codec_internal.h" />
+    <ClInclude Include="..\third_party\libvorbis\lib\psy_retail_tables.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
+    <None Include="..\LICENSE.md" />
+    <None Include="..\third_party\libogg\COPYING" />
+    <None Include="..\third_party\libvorbis\COPYING" />
+    <None Include="..\resources\AlienShooterRevisited.exports.def" />
+    <None Include="..\resources\AlienShooterRevisited_GameResources.res" />
+    <None Include="..\resources\d3dx9_27_import.def" />
+    <None Include="..\resources\d3dx9_27_import.lib" />
+    <None Include="..\tools\build\AlienShooterRevisitedPEHeader.targets" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Target Name="EnsureAlienShooterRevisitedCompileDirectories" BeforeTargets="ClCompile">
+    <MakeDir Directories="$(OutDir);$(IntDir)" />
+  </Target>
+  <Target Name="EnsureAlienShooterRevisitedLinkDirectories" BeforeTargets="Link">
+    <MakeDir Directories="$(OutDir);$(IntDir)" />
+  </Target>
+  <Import Project="$(ProjectDir)..\tools\build\AlienShooterRevisitedPEHeader.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
